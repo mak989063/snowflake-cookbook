@@ -1,0 +1,10 @@
+-- Inspect the current Snowflake session.
+SELECT
+    CURRENT_USER()       AS CURRENT_USER,
+    CURRENT_ROLE()       AS CURRENT_ROLE,
+    CURRENT_DATABASE()   AS CURRENT_DATABASE,
+    CURRENT_SCHEMA()     AS CURRENT_SCHEMA,
+    CURRENT_WAREHOUSE()  AS CURRENT_WAREHOUSE;
+
+-- List databases visible to the active role.
+SHOW DATABASES;
