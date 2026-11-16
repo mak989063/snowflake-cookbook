@@ -1,20 +1,24 @@
-# macOS system files
+# macOS
 .DS_Store
-**/.DS_Store
 
-# Snowflake credentials & connection configs
-connections.toml
-config.toml
-.snowsql/
+# Runtime logs
+*.log
+
+# Environment files
+.env
+.env.*
+
+# Private keys and certificates
 *.pem
 *.p8
+*.p12
+*.key
 
-# Environment variables & secrets
-.env
-*.env
-
-# Python / Snowpark environments
+# Python
 __pycache__/
-*.py[cod]
+*.pyc
 .venv/
-venv/
+
+# IDE
+.vscode/
+.idea/
