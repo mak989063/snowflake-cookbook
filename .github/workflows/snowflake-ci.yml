@@ -24,6 +24,26 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v7
+      
+      - name: Inspect GitHub Actions runner
+        run: |
+          echo "Operating System:"
+          uname -a
+
+          echo "Current User:"
+          whoami
+
+          echo "Working Directory:"
+          pwd
+
+          echo "Available Disk Space:"
+          df -h
+
+          echo "Git Version:"
+          git --version
+
+          echo "Python Version:"
+          python3 --version
 
       - name: Display runner information
         run: |
