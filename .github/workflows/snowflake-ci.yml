@@ -1,0 +1,45 @@
+
+name: Snowflake CI - Repository Validation
+
+on:
+  push:
+    branches:
+      - main
+
+  pull_request:
+    branches:
+      - main
+
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Validate Snowflake Repository
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: Display runner information
+        run: |
+          echo "GitHub Actions runner started"
+          echo "Repository: $GITHUB_REPOSITORY"
+          echo "Branch or ref: $GITHUB_REF_NAME"
+
+      - name: Validate Module 05 directory structure
+        run: |
+          test -d .github/workflows
+          test -d 05-snowflake-github-actions/sql
+          test -d 05-snowflake-github-actions/docs
+
+          echo "Module 05 directory structure validated."
+
+      - name: CI validation completed
+        run: |
+          echo "Snowflake repository validation successful!"
+
