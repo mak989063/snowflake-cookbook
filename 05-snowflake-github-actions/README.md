@@ -12,17 +12,25 @@
 ### Current Architecture
 
 GitHub Repository
+
         |
         v
+
 GitHub Actions Workflow
+
         |
         v
+
 Snowflake CLI
+
         |
         v
+
 Snowflake DEV Environment
+
         |
         v
+        
 Deployment Audit Table
 
 ### Next Steps
